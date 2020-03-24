@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { ApplicationInsightService } from "./application-insight.service";
+import { HttpErrorResponse } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
@@ -11,7 +12,7 @@ export class LogService {
     return this.applicationInsightService.logError(error);
   }
 
-  logError(error: Error | import("@angular/common/http").HttpErrorResponse) {
+  logError(error: Error | HttpErrorResponse) {
     console.error(error);
   }
 }
